@@ -18,10 +18,10 @@ def myCallback(pin):
      pwm.start(0)
      for dc in range(101):
         pwm.ChangeDutyCycle(dc)
-        sleep(0.005)
+        sleep(0.05)
      for dc in range(101):
         pwm.ChangeDutyCycle(100-dc)
-        sleep(0.005)
+        sleep(0.05)
    except KeyboardInterrupt:
     print ('\nExiting')
    except Exception as e:
