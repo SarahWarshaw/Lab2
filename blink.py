@@ -27,7 +27,6 @@ def myCallback(pin):
    except Exception as e:
     print('\ne')
    pwm.stop()
-   GPIO.cleanup()
   
 
 GPIO.add_event_detect(in1, GPIO.RISING, callback = myCallback,bouncetime = 100)
