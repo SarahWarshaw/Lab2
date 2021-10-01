@@ -3,7 +3,7 @@ from time import sleep
 
 in1, in2 = 5, 26
 LED1, LED2, LED3 = 25, 16, 21
-f = 1
+f = 0.01
 pin2LED = {in1:LED1, in2:LED2}
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(in1, GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
@@ -18,7 +18,10 @@ def myCallback(pin):
      pwm.start(0)
      for dc in range(101):
         pwm.ChangeDutyCycle(dc)
-        sleep(1)
+        sleep(0.005)
+     for dc in range(101):
+        pwm.ChangeDutyCycle(100-dc)
+        sleep(0.005)
    except KeyboardInterrupt:
     print ('\nExiting')
    except Exception as e:
