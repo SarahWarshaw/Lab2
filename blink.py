@@ -3,7 +3,7 @@ from time import sleep
 
 in1, in2 = 5, 26
 LED1, LED2, LED3 = 25, 16, 21
-f = 0.01
+f = 1
 pin2LED = {in1:LED1, in2:LED2}
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(in1, GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
@@ -32,6 +32,7 @@ def myCallback(pin):
 GPIO.add_event_detect(in1, GPIO.RISING, callback = myCallback,bouncetime = 100)
 GPIO.add_event_detect(in2, GPIO.RISING, callback = myCallback,bouncetime = 100)
 
+print('Blinking')
 try:
   while True:
     GPIO.output(LED3,0)
