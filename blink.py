@@ -3,7 +3,7 @@ from time import sleep
 
 in1, in2 = 5, 26
 LED1, LED2, LED3 = 25, 16, 21
-f = 1
+f = 100
 pin2LED = {in1:LED1, in2:LED2}
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(in1, GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
