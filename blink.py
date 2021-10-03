@@ -14,18 +14,13 @@ GPIO.setup(LED3, GPIO.OUT)
 
 def myCallback(pin):
    pwm = GPIO.PWM(pin2LED.get(pin),f)
-   try:
-     pwm.start(0)
-     for dc in range(0,101,10):
-        pwm.ChangeDutyCycle(dc)
-        sleep(0.05)
-     for dc in range(0,101,10):
-        pwm.ChangeDutyCycle(100-dc)
-        sleep(0.05)
-   except KeyboardInterrupt:
-    print ('\nExiting')
-   except Exception as e:
-    print('\ne')
+   pwm.start(0)
+   for dc in range(0,101,1):
+     pwm.ChangeDutyCycle(dc)
+     sleep(0.005)
+   for dc in range(0,101,1):
+      pwm.ChangeDutyCycle(100-dc)
+      sleep(0.005)
    pwm.stop()
   
 
